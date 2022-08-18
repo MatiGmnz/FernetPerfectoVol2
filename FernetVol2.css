@@ -1,0 +1,67 @@
+body{
+    background-color: #2b2d42;
+    text-align: center;
+    font-family: 'Silkscreen', cursive;
+    color: #f5ebe0;
+}
+
+h1, h2, h3, h4{
+    text-shadow: 0px 0px 30px black;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.cortana{
+    border: 3px solid black;
+    border-radius: 50%;
+}
+
+.tutorial{
+    width: 450px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    border: 2px solid black;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    justify-content: center;
+}
+
+.frn{
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;
+    border-radius: 50%;
+    
+}
+
+.valores{
+    width: 150px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.marcas{
+    width: 150px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.btn{
+    width: auto;
+    height: 30px;
+    margin-top: 10px;
+    font-family: 'Silkscreen', cursive;
+    font-size: bold;
+    border-radius: 8px;
+    background-color: #8d99ae;
+    
+}
