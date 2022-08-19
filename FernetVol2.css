@@ -25,9 +25,9 @@ h1, h2, h3, h4{
     margin: auto;
     text-align: center;
     display: flex;
-    border: 2px solid black;
-    border-right: 2px solid white;
-    border-bottom: 2px solid white;
+    border: 2px solid grey;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
     border-radius: 5px;
     padding: 5px;
     justify-content: center;
