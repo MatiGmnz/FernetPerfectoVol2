@@ -67,6 +67,8 @@ h1, h2, h3, h4{
 }
 
 .dialogBox{
+    margin-bottom: 5px;
+    margin-right: 10px;
     width: 290px;
     height: auto;
     border: 2px solid grey;
