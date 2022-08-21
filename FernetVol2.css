@@ -66,6 +66,18 @@ h1, h2, h3, h4{
     
 }
 
+.btn:hover {
+    width: auto;
+    height: 30px;
+    margin-top: 10px;
+    font-family: 'Silkscreen', cursive;
+    font-size: bold;
+    border-radius: 8px;
+    background-color: white;
+    border: none;
+    
+}
+
 .dialogBox{
     margin-bottom: 5px;
     margin-right: 10px;
