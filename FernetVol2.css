@@ -88,3 +88,27 @@ h1, h2, h3, h4{
     border-right: 2px solid black ;
     border-bottom: 2px solid black;
 }
+.cat{
+    display: flex;
+    justify-content: end;
+}
+
+
+.kiti{
+    width: 75px;
+    height: 75px;
+    border-radius: 15%;
+    border: 2px solid grey;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    filter: drop-shadow(5px 5px 5px black);
+    padding: 2px;
+    margin-left: auto;
+    
+}
+
+.kiti:hover{
+    filter: drop-shadow(0px 0px 5px rgb(208, 243, 13));
+    border: none;
+
+}
