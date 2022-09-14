@@ -1,9 +1,15 @@
-var texto = document.getElementById("vaso");
-var marca = document.getElementById("marca");
-var element = document.getElementById("boton");
-let resultado = document.getElementById("result");
+let texto = document.getElementById("vaso");
+let marca = document.getElementById("marca");
+let element = document.getElementById("boton");
+let resultado = document.getElementById("resultado");
+let tarjeta = document.getElementById("result");
+let borrar = document.getElementById("delete");
 
-element.addEventListener("click", calcular)
+element.addEventListener("click", () => { 
+   result.showModal(), calcular()});
+
+borrar.addEventListener("click", () => {
+  result.close()});
 
 function calcular() {
 
@@ -35,5 +41,5 @@ if(fernet == 4)
 if (fernet == 5) {
   porcentaje_fernet = fernet_artesanal * recipiente / Coca
 };
-  resultado.innerText = "Tu medida perfecta de fernet es: " + porcentaje_fernet + "ml."
+ resultado.innerText = "Tu medida perfecta de fernet es: " + porcentaje_fernet + "ml."
 };
