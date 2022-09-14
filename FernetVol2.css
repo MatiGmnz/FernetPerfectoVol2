@@ -116,6 +116,7 @@ h1, h2, h3, h4{
 #result{
      opacity: 1;
      position: absolute;
+    box-shadow: 2px 2px 3px black;
     width: 450px;
     background-color: #2b2d42;
     color: #f5ebe0;
