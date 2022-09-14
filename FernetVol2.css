@@ -125,6 +125,38 @@ h1, h2, h3, h4{
     border-radius: 5px;
 }
 
+#kat{
+    background-image: url("28462.jpg");
+    height: 500px;
+    width: 600px;
+}
+
+.karen{
+    width: 225px;
+    height: 225px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    border: 5px solid black;
+    border-radius: 5px;
+    filter: drop-shadow(5px 5px 15px black);
+}
+
+.texto{
+    width: 450px;
+    height: 120px;
+    background-color: antiquewhite;
+    border: 5px solid black;
+    border-radius: 15px;
+    color: black;
+    font-size: larger;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3px;
+    padding: 15px;
+    filter: drop-shadow(5px 5px 15px black);
+    text-align: start;
+}
 
 footer{
     text-align: start;
