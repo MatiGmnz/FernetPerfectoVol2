@@ -4,6 +4,10 @@ let element = document.getElementById("boton");
 let resultado = document.getElementById("resultado");
 let tarjeta = document.getElementById("result");
 let borrar = document.getElementById("delete");
+let cat = document.getElementById("kiti");
+let gato = document.getElementById("kat");
+let cierre = document.getElementById("cierro");
+
 
 element.addEventListener("click", () => { 
    result.showModal(), calcular()});
@@ -43,3 +47,10 @@ if (fernet == 5) {
 };
  resultado.innerText = "Tu medida perfecta de fernet es: " + porcentaje_fernet + "ml."
 };
+
+cat.addEventListener("click", () => {
+  kat.showModal()
+});
+
+cierre.addEventListener("click", () => {
+  kat.close()});
