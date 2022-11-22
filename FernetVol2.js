@@ -184,3 +184,5 @@ pausa4.addEventListener("click", ()=>{
     timerPropio = 0;
   }
 });
+
+localStorage.setItem("Medidas", JSON.stringify(tiemposTomados))
