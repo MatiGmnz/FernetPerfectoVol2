@@ -1,112 +1,186 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¿Cómo preparo el mejor fernet?</title>
-    <link rel="stylesheet" href="FernetVol2.css">
-    <link rel="icon" href="monophy.gif">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
-</head>
-<body>
-   
-    <h1 class="title">¿Cómo preparar el fernet perfecto?</h1>
-    <div class="container">
-        <div>
-            <img class="cortana" src="cortana.png" alt="Asistente">
-            <div class="dialogBox">
-                <span>Hola, estoy aquí para ayudarte a preparar el Fernet perfecto.</span>
-            </div>
-        </div>
-        <div class="preguntas">
-            <h3>Introduzca la capacidad de su recipiente</h3>
-            <input class="valores" type="text" placeholder="ML" id="vaso">
-            <h3>Seleccione su fernet favorito:</h3>
-            <select class="marcas" name="marcas" id="marca">
-                <option>1-Branca</option>
-                <option>2-Vittone</option>
-                <option>3-1882</option>
-                <option>4-Buhero Negro</option>
-                <option>5-Artesanal</option>
-            </select>
-            <br>
-            <button class="btn" id="boton">Calculemos</button>
-            <br>
-            
-        </div>
-        <dialog id="result" >
-            <div class="card-result">
-                <div class="text">
-                    <h2 id="resultado"></h2>
-                </div>
-                <button id="delete" class="btn">CERRAR</button>
-            </div>
-        </dialog>
-    </div>
-    
-    <div class="tutorial">
-        <img class="frn" src="FONDO.png" alt="Fernet.">
-        <p>Hacé click <a href="https://www.youtube.com/watch?v=LhFYIw8_fcA" target="_blank">aquí</a> para ver cómo se hace.</p>
-     </div>
-     <div class="tutorial">
-        <img class="frn" src="abogado.jfif" alt="Señor serio.">
-        <p>No nos olvidemos que todo tiene su origen... 
-            un poquito de <a href="https://es.wikipedia.org/wiki/Fernet#Historia" target="_blank">historia</a> no nos viene mal.
-        </p>
-    </div>
-    <div class="cat">
-        <a id="kiti">
-            <img src="gato-user.png" alt="¿un gato?" class="kiti">
-        </a>
-    </div>
-    <dialog id="kat">
-        <div class="karen"> 
-            <img src="karen.png" alt="karen">
-        </div>
-        <div class="texto">
-            <p>¡¿Que?!...</p>
-            <p>¿Cómo que puedo conocer qué tipo de gato sería?...</p>
-        </div>
-        <div class="botones">
-            <button id="cierro" class="btn">CERRAR</button>
-            <button class="btn">QUIERO VER!</button>
-        </div>
-    </dialog>
-    
-    <h2>Estudios recientes revelaron que la mejor forma de preparar un Fernet, es contando el tiempo que se vierte la bebida en el vaso.
-        Por eso, implementamos nuevos temporizadores para que encuentres tu medida ideal: 
-    </h2>
-    <div class="timer">    
-        <div class="temporizador">
-            <h3>Suave</h3>
-            <div class="counter" id="counter-suave"></div>
-            <button class="botonL" id="suave">Iniciar</button>
-            <button class="botonL" id="pausa1">Pausar</button>
-        </div>
-        <div class="temporizador">
-            <h3>Tranca</h3>
-            <div class="counter" id="counter-tranca"></div>
-            <button class="botonL" id="tranca">Iniciar</button>
-            <button class="botonL" id="pausa2">Pausar</button>
-        </div>
-        <div class="temporizador">
-            <h3>Fuertazo</h3>
-            <div class="counter" id="counter-fuerte"></div>
-            <button class="botonL" id="fuerte">Iniciar</button>
-            <button class="botonL" id="pausa3">Pausar</button>
-        </div>
-    </div>
-    <h4>Sentite libre de pausar cuando desees, nadie te juzga... O si...</h4>  
-    <hr>
-    <footer>    
-        <p>Hola, Soy Mati.</p>
-        <p>Este es mi primer proyecto de desarrollo web, espero lo disfrutes.</p>
-        <p>Me gustaría conocer tu opinión.</p>
-        <p>gimenezmati29@gmail.com</p>
-    </footer> 
-<script src="FernetVol2.js"></script>
-</body>
-</html>
+let texto = document.getElementById("vaso");
+let marca = document.getElementById("marca");
+let element = document.getElementById("boton");
+let resultado = document.getElementById("resultado");
+let tarjeta = document.getElementById("result");
+let borrar = document.getElementById("delete");
+let cat = document.getElementById("kiti");
+let gato = document.getElementById("kat");
+let cierre = document.getElementById("cierro");
+let counterSuave = document.getElementById("counter-suave");
+let counterTranca = document.getElementById("counter-tranca");
+let counterFuerte = document.getElementById("counter-fuerte");
+let counterPropio = document.getElementById("counter-propio");
+let inicio1 = document.getElementById("suave");
+let inicio2 = document.getElementById("tranca");
+let inicio3 = document.getElementById("fuerte");
+let inicio4 = document.getElementById("propio");
+let pausa1 = document.getElementById("pausa1");
+let pausa2 = document.getElementById("pausa2");
+let pausa3 = document.getElementById("pausa3");
+let pausa4 = document.getElementById("pausa4");
+let listado = document.getElementById("lista-tiempos");
+
+
+element.addEventListener("click", () => { 
+  result.showModal(), calcular()});
+
+borrar.addEventListener("click", () => {
+  result.close()});
+
+function calcular() {
+
+let fernet = parseInt(marca.value);
+let recipiente = parseInt(texto.value);
+let fernet_branca = 35;
+let fernet_vittone = 40;
+let fernet_1882 = 32;
+let fernet_buhero_negro = 37;
+let fernet_artesanal = 39;
+let Coca = 100;
+let porcentaje_fernet;
+if(fernet == 1)
+{
+  porcentaje_fernet = fernet_branca * recipiente / Coca
+};
+if(fernet == 2)
+{
+  porcentaje_fernet = fernet_vittone * recipiente / Coca
+};
+if(fernet == 3)
+{
+  porcentaje_fernet = fernet_1882 * recipiente / Coca
+};
+if(fernet == 4)
+{
+  porcentaje_fernet = fernet_buhero_negro * recipiente / Coca
+};
+if (fernet == 5) {
+  porcentaje_fernet = fernet_artesanal * recipiente / Coca
+};
+resultado.innerText = "Tu medida perfecta de fernet es: " + porcentaje_fernet + "ml."
+};
+
+cat.addEventListener("click", () => {
+  kat.showModal()
+});
+
+cierre.addEventListener("click", () => {
+  kat.close()
+});
+
+
+
+
+let cuentaRegresiva = document.createElement("h1");
+
+
+let timerSuave = 9;
+let timerTranca = 13;
+let timerFuerte = 17;
+
+let a1;
+let a2;
+let a3;
+let a4;
+
+let s = false;
+let t = false;
+let f = false;
+
+
+
+inicio1.addEventListener("click", () => {
+  let s = true;
+  
+  if(s === true){
+    a1 = setInterval(() => {
+      timerSuave--;
+      cuentaRegresiva.innerHTML = timerSuave;
+      counterSuave.appendChild(cuentaRegresiva);
+      if(timerSuave === 0){
+        clearInterval(a1);
+        cuentaRegresiva.innerHTML = "¡Tiempo!";
+        counterSuave.appendChild(cuentaRegresiva);
+        timerSuave = 9;
+      }
+    }, 1000);
+  }
+});
+
+inicio2.addEventListener("click", () => {
+  let t = true;
+
+  if(t === true){
+    a2 = setInterval(() => {
+      timerTranca--;
+      cuentaRegresiva.innerHTML = timerTranca;
+      counterTranca.appendChild(cuentaRegresiva);
+      if(timerTranca === 0){
+        clearInterval(a2);
+        cuentaRegresiva.innerHTML = "¡Tiempo!";
+        counterTranca.appendChild(cuentaRegresiva);
+        timerTranca = 13;
+      }
+    }, 1000);
+  }
+});
+
+inicio3.addEventListener("click", () => {
+  let f = true;
+
+  if(f === true){
+    a3 = setInterval(() => {
+      timerFuerte--;
+      cuentaRegresiva.innerHTML = timerFuerte;
+      counterFuerte.appendChild(cuentaRegresiva);
+      if(timerFuerte === 0){
+        clearInterval(a3);
+        cuentaRegresiva.innerHTML = "¡Tiempo!";
+        counterFuerte.appendChild(cuentaRegresiva);
+        timerFuerte = 17;
+      }
+    }, 1000);
+  }
+});
+
+
+pausa1.addEventListener("click", ()=>{
+  clearInterval(a1);
+  timerSuave = 9;
+});
+
+pausa2.addEventListener("click", ()=>{
+  clearInterval(a2);
+  timerTranca = 13;
+});
+
+pausa3.addEventListener("click", ()=>{
+  clearInterval(a3);
+  timerFuerte = 17;
+});
+
+let tiemposTomados = [];
+let timerPropio = 0;
+let tiempofrenado = false
+
+inicio4.addEventListener("click", () => {
+  a4 = setInterval(() =>{
+    timerPropio++;
+    cuentaRegresiva.innerHTML = timerPropio;
+    counterPropio.appendChild(cuentaRegresiva);
+  },1000);
+});
+
+pausa4.addEventListener("click", ()=>{
+  let list = document.createElement("ul");
+  list.innerHTML = `<li>Ultima medida: ${timerPropio}</li>`;
+  listado.appendChild(list);
+  tiemposTomados.push(timerPropio);
+  console.log(tiemposTomados)
+  tiempofrenado = true;
+  if(tiempofrenado === true){
+    clearInterval(a4);
+    timerPropio = 0;
+  }
+});
