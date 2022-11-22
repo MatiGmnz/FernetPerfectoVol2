@@ -210,5 +210,8 @@ footer{
     border-radius: 8px;
     background-color: white;
     border: none;
-    
+}
+
+.caja-tiempo{
+    display: flex;
 }
