@@ -114,8 +114,8 @@ h1, h2, h3, h4{
 }
 
 #result{
-     opacity: 1;
-     position: absolute;
+    opacity: 1;
+    position: absolute;
     box-shadow: 2px 2px 3px black;
     width: 450px;
     background-color: #2b2d42;
@@ -162,4 +162,53 @@ footer{
     text-align: start;
     font-size: small;
     color: #9b9dad;
+}
+
+.timer{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.temporizador{
+    width: 300px;
+    height: 350px;
+    border: 2px solid grey;
+    border-right: 4px solid black;
+    border-bottom: 4px solid black;
+    border-radius: 5px;
+    display: block;
+}
+
+.counter{
+    width: 150px;
+    height: 130px;
+    padding: 15%;
+    margin-left: 10%;
+    font-size: x-large;
+    justify-content: center;
+    display: flex;
+    
+}
+
+.botonL{
+    width: 120px;
+    height: 30px;
+    margin-top: 10px;
+    font-family: 'Silkscreen', cursive;
+    font-size: bold;
+    border-radius: 8px;
+    background-color: #8d99ae;
+    
+}
+
+.botonL:hover{
+    width: 120px;
+    height: 30px;
+    margin-top: 10px;
+    font-family: 'Silkscreen', cursive;
+    font-size: bold;
+    border-radius: 8px;
+    background-color: white;
+    border: none;
+    
 }
