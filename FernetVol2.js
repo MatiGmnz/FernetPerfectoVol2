@@ -10,12 +10,16 @@ let cierre = document.getElementById("cierro");
 let counterSuave = document.getElementById("counter-suave");
 let counterTranca = document.getElementById("counter-tranca");
 let counterFuerte = document.getElementById("counter-fuerte");
+let counterPropio = document.getElementById("counter-propio");
 let inicio1 = document.getElementById("suave");
 let inicio2 = document.getElementById("tranca");
 let inicio3 = document.getElementById("fuerte");
+let inicio4 = document.getElementById("propio");
 let pausa1 = document.getElementById("pausa1");
 let pausa2 = document.getElementById("pausa2");
-let pausa3= document.getElementById("pausa3");
+let pausa3 = document.getElementById("pausa3");
+let pausa4 = document.getElementById("pausa4");
+let listado = document.getElementById("lista-tiempos");
 
 
 element.addEventListener("click", () => { 
@@ -78,6 +82,7 @@ let timerFuerte = 17;
 let a1;
 let a2;
 let a3;
+let a4;
 
 let s = false;
 let t = false;
@@ -153,4 +158,29 @@ pausa2.addEventListener("click", ()=>{
 pausa3.addEventListener("click", ()=>{
   clearInterval(a3);
   timerFuerte = 17;
+});
+
+let tiemposTomados = [];
+let timerPropio = 0;
+let tiempofrenado = false
+
+inicio4.addEventListener("click", () => {
+  a4 = setInterval(() =>{
+    timerPropio++;
+    cuentaRegresiva.innerHTML = timerPropio;
+    counterPropio.appendChild(cuentaRegresiva);
+  },1000);
+});
+
+pausa4.addEventListener("click", ()=>{
+  let list = document.createElement("ul");
+  list.innerHTML = `<li>Ultima medida: ${timerPropio}</li>`;
+  listado.appendChild(list);
+  tiemposTomados.push(timerPropio);
+  console.log(tiemposTomados)
+  tiempofrenado = true;
+  if(tiempofrenado === true){
+    clearInterval(a4);
+    timerPropio = 0;
+  }
 });
