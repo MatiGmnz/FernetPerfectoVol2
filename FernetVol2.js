@@ -7,17 +7,14 @@ let borrar = document.getElementById("delete");
 let cat = document.getElementById("kiti");
 let gato = document.getElementById("kat");
 let cierre = document.getElementById("cierro");
-let counterSuave = document.getElementById("counter-suave");
 let counterTranca = document.getElementById("counter-tranca");
-let counterFuerte = document.getElementById("counter-fuerte");
 let counterPropio = document.getElementById("counter-propio");
-let inicio1 = document.getElementById("suave");
+let selectSuave = document.getElementById("selectSuave");
+let selectTranca = document.getElementById("selectTranca");
+let selectFuerte = document.getElementById("selectFuerte");
 let inicio2 = document.getElementById("tranca");
-let inicio3 = document.getElementById("fuerte");
 let inicio4 = document.getElementById("propio");
-let pausa1 = document.getElementById("pausa1");
 let pausa2 = document.getElementById("pausa2");
-let pausa3 = document.getElementById("pausa3");
 let pausa4 = document.getElementById("pausa4");
 let listado = document.getElementById("lista-tiempos");
 
@@ -71,94 +68,54 @@ cierre.addEventListener("click", () => {
 
 
 
-
 let cuentaRegresiva = document.createElement("h1");
 
 
-let timerSuave = 9;
-let timerTranca = 13;
-let timerFuerte = 17;
+let timer = 0;
 
-let a1;
-let a2;
-let a3;
+
+let a;
 let a4;
 
-let s = false;
+
 let t = false;
-let f = false;
 
 
-
-inicio1.addEventListener("click", () => {
-  let s = true;
-  
-  if(s === true){
-    a1 = setInterval(() => {
-      timerSuave--;
-      cuentaRegresiva.innerHTML = timerSuave;
-      counterSuave.appendChild(cuentaRegresiva);
-      if(timerSuave === 0){
-        clearInterval(a1);
-        cuentaRegresiva.innerHTML = "¡Tiempo!";
-        counterSuave.appendChild(cuentaRegresiva);
-        timerSuave = 9;
-      }
-    }, 1000);
-  }
+selectSuave.addEventListener("click", () => {
+  timer = 9;
 });
+
+selectTranca.addEventListener("click", () => {
+  timer = 13;
+});
+
+selectFuerte.addEventListener("click", () => {
+  timer = 17
+})
+
 
 inicio2.addEventListener("click", () => {
   let t = true;
 
   if(t === true){
-    a2 = setInterval(() => {
-      timerTranca--;
-      cuentaRegresiva.innerHTML = timerTranca;
+    a = setInterval(() => {
+      timer--;
+      cuentaRegresiva.innerHTML = timer;
       counterTranca.appendChild(cuentaRegresiva);
-      if(timerTranca === 0){
-        clearInterval(a2);
+      if(timer === 0){
+        clearInterval(a);
         cuentaRegresiva.innerHTML = "¡Tiempo!";
         counterTranca.appendChild(cuentaRegresiva);
-        timerTranca = 13;
       }
     }, 1000);
   }
 });
 
-inicio3.addEventListener("click", () => {
-  let f = true;
-
-  if(f === true){
-    a3 = setInterval(() => {
-      timerFuerte--;
-      cuentaRegresiva.innerHTML = timerFuerte;
-      counterFuerte.appendChild(cuentaRegresiva);
-      if(timerFuerte === 0){
-        clearInterval(a3);
-        cuentaRegresiva.innerHTML = "¡Tiempo!";
-        counterFuerte.appendChild(cuentaRegresiva);
-        timerFuerte = 17;
-      }
-    }, 1000);
-  }
-});
-
-
-pausa1.addEventListener("click", ()=>{
-  clearInterval(a1);
-  timerSuave = 9;
-});
 
 pausa2.addEventListener("click", ()=>{
-  clearInterval(a2);
-  timerTranca = 13;
+  clearInterval(a);
 });
 
-pausa3.addEventListener("click", ()=>{
-  clearInterval(a3);
-  timerFuerte = 17;
-});
 
 let tiemposTomados = [];
 let timerPropio = 0;
