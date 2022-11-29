@@ -129,6 +129,7 @@ h1, h2, h3, h4{
     background-image: url("28462.jpg");
     height: 500px;
     width: 600px;
+    position: fixed;
 }
 
 .karen{
@@ -210,8 +211,41 @@ footer{
     border-radius: 8px;
     background-color: white;
     border: none;
+    
 }
 
 .caja-tiempo{
     display: flex;
+}
+
+.botones{
+    width: auto;
+    height: 30px;
+    margin-top: 10px;
+    font-family: 'Silkscreen', cursive;
+    font-size: bold;
+    border-radius: 8px;
+    background-color: #8d99ae;
+}
+
+.botones:hover{
+    width: auto;
+    height: 30px;
+    margin-top: 10px;
+    font-family: 'Silkscreen', cursive;
+    font-size: bold;
+    border-radius: 8px;
+    background-color: white;
+    border: none;
+}
+
+.botones:checked{
+    width: auto;
+    height: 30px;
+    margin-top: 10px;
+    font-family: 'Silkscreen', cursive;
+    font-size: bold;
+    border-radius: 8px;
+    background-color: white;
+    border: none;
 }
