@@ -46,23 +46,34 @@
             </div>
         </dialog>
     </div>
-    
-    <div class="tutorial">
-        <img class="frn" src="FONDO.png" alt="Fernet.">
-        <p>Hacé click <a href="https://www.youtube.com/watch?v=LhFYIw8_fcA" target="_blank">aquí</a> para ver cómo se hace.</p>
+    <div class="cartel">
+        <div class="tutorial" id="video">
+            <p>Acá está bien explicado:</p>
+            <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/LhFYIw8_fcA" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+        </div>
+        <div class="tutorial1" id="wiki">
+            <img class="frn" src="abogado.jfif" alt="Señor serio.">
+            <p>No nos olvidemos que todo tiene su origen... 
+                un poquito de <a href="https://es.wikipedia.org/wiki/Fernet#Historia" target="_blank">historia</a> no nos viene mal.
+            </p>
+        </div>
+
+        <div class="tutorial1" id="tiposDeGatos">
+            <a>
+                <img src="gato-user.png" alt="¿un gato?" class="kiti">
+            </a>
+            <p>Quisieras conocer qué tipo de gato sos?</p>
+        </div>
     </div>
-    <div class="tutorial">
-        <img class="frn" src="abogado.jfif" alt="Señor serio.">
-        <p>No nos olvidemos que todo tiene su origen... 
-            un poquito de <a href="https://es.wikipedia.org/wiki/Fernet#Historia" target="_blank">historia</a> no nos viene mal.
-        </p>
-    </div>
-    
-    <div class="cat">
-        <a id="kiti">
-            <img src="gato-user.png" alt="¿un gato?" class="kiti">
-        </a>
-    </div>
+   
     <dialog id="kat">
         <div class="karen"> 
             <img src="karen.png" alt="karen">
@@ -76,33 +87,35 @@
             <button class="btn">QUIERO VER!</button>
         </div>
     </dialog>
-    
-    <h2>Estudios recientes revelaron que la mejor forma de preparar un Fernet, es contando el tiempo que se vierte la bebida en el vaso.
-        Por eso, implementamos nuevos temporizadores para que encuentres tu medida ideal: 
-    </h2>
-    <div class="timer">    
-        <div class="temporizador">
-            <!-- <h3>Tranca</h3> -->
-            <div class="botonera">
-                <button class="botones" id="selectSuave">Suave</button>
-                <button class="botones" id="selectTranca">Tranca</button>
-                <button class="botones" id="selectFuerte">Fuertazo</button>
+    <div class="time">
+        <h2>Estudios recientes revelaron que la mejor forma de preparar un Fernet, es contando el tiempo que se vierte la bebida en el vaso.
+            Por eso, implementamos nuevos temporizadores para que encuentres tu medida ideal: 
+        </h2>
+        <div class="timer">    
+            <div class="temporizador">
+                <!-- <h3>Tranca</h3> -->
+                <div class="botonera">
+                    <button class="botones" id="selectSuave">Suave</button>
+                    <button class="botones" id="selectTranca">Tranca</button>
+                    <button class="botones" id="selectFuerte">Fuertazo</button>
+                </div>
+                <div class="counter" id="counter-tranca"></div>
+                <button class="botonL" id="tranca">Iniciar</button>
+                <button class="botonL" id="pausa2">Pausar</button>
             </div>
-            <div class="counter" id="counter-tranca"></div>
-            <button class="botonL" id="tranca">Iniciar</button>
-            <button class="botonL" id="pausa2">Pausar</button>
+        </div>
+        <h4>Sentite libre de pausar cuando desees, nadie te juzga... O si...</h4>  
+        <div class="caja-tiempo">
+            <div class="temporizador" id="tempo2">
+                <h3>A tu propia medida:</h3>
+                <div class="counter" id="counter-propio"></div>
+                <button class="botonL" id="propio">Iniciar</button>
+                <button class="botonL" id="pausa4">Guardar</button>
+            </div>
+            <div id="lista-tiempos"></div>
         </div>
     </div>
-    <h4>Sentite libre de pausar cuando desees, nadie te juzga... O si...</h4>  
-    <div class="caja-tiempo">
-        <div class="temporizador" id="tempo2">
-            <h3>A tu propia medida:</h3>
-            <div class="counter" id="counter-propio"></div>
-            <button class="botonL" id="propio">Iniciar</button>
-            <button class="botonL" id="pausa4">Guardar</button>
-        </div>
-        <div id="lista-tiempos"></div>
-    </div>
+    
     <hr>
     <footer>    
         <p>Hola, Soy Mati.</p>
