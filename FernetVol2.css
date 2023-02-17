@@ -306,3 +306,11 @@ footer{
     background-color: white;
     border: none;
 }
+
+@media (max-width: 576px) {
+    .cartel{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+}
